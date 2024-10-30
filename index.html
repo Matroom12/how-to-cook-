@@ -1,27 +1,71 @@
-<!DOCTYPE html>
+
 <html>
+<head>
+  <title>Cooking Guide</title>
   <style>
     img {
-      margin-bottom:10px;
-  display: block;
-  margin-left: 2px;
-  margin-top: 0px;
-  border-radius: 30px;
-  border-color: white;
-}
+      margin-bottom: 10px;
+      display: block;
+      margin-left: 2px;
+      margin-top: 0px;
+      border-radius: 30px;
+      border-color: white;
+    }
 
-.p {
-  stlye=font-size: 40px;
-}
+    .p {
+      font-size: 40px;
+    }
+
+    body {
+      background-color: yellow;
+    }
+
+    .search-container {
+      margin: 20px 0;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 300px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      background-color: #28a745;
+      color: black;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #218838;
+
+    }
   </style>
-<head>
-  <title> </title>
 </head>
 <body>
   <h1 style="font-size: 23px;">This site will talk about how to cook different types of food</h1>
-  <body style="background-color:yellow"
-</body>
+
+  <div class="search-container">
+    <form action="search_results.html" method="get">
+      <input type="text" name="query" placeholder="Search for recipes...">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+
+  <p>
+    <a href="page1.html"><img src="https://i.ibb.co/1d6QzhD/download.jpg" alt="Bread Recipe" width="200" height="100"></a>
+    <a href="page1.html">- This is how to make a french Brioche</a><br>
+    <a href="page2.html">- How to make cookie dough</a>
+  </p>
+
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/RPfQ0Fm/download.jpg" alt="Another Recipe Image"></a>
   
-<a href="page1.html"><img src="https://i.ibb.co/1d6QzhD/download.jpg" alt="download" border="0"border="20"width="200" height="100"></a>   <a href="page1.html">-This is how to make bread</a></p>
-    <a href="page2.html">-How make cookie dough </a></p>
-    <a href="https://imgbb.com/"><img src="https://i.ibb.co/RPfQ0Fm/download.jpg" alt="download" border="0"></a>
+</body>
+</html>
+
