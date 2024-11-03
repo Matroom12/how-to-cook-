@@ -41,6 +41,82 @@
 
 
 <button onclick="goBack()">Go Back</button>
-</p>
-  </body>
+
+<head>
+  <title>Timer</title>
+</head>
+<body>
+  <h1>Timer</h1>
+  <input type="number" id="hours" placeholder="Hours">
+  <input type="number" id="minutes" placeholder="Minutes">
+  <input type="number" id="seconds" placeholder="Seconds">
+  <button onclick="startTimer()">Start</button>
+  <button onclick="stopTimer()">Stop</button>
+  <button onclick="resetTimer()">Reset</button>
+
+  <div id="timer">00:00:00</div>
+
+  <script>
+    var hours = 0;
+    var minutes = 0;
+    var seconds = 0;
+    var interval;
+
+    function startTimer() {
+      if (interval) {
+        clearInterval(interval);
+      }
+
+      hours = parseInt(document.getElementById("hours").value) || 0;
+      minutes = parseInt(document.getElementById("minutes").value) || 0;
+      seconds = parseInt(document.getElementById("seconds").value) || 0;
+
+      updateDisplay();
+
+      interval = setInterval(function() {
+        if (hours === 0 && minutes === 0 && seconds === 0) {
+          clearInterval(interval);
+          alert("Time's up!");
+          return;
+        }
+
+        if (seconds === 0) {
+          if (minutes === 0) {
+            hours--;
+            minutes = 59;
+          } else {
+            minutes--;
+          }
+          seconds = 59;
+        } else {
+          seconds--;
+        }
+
+        updateDisplay();
+      }, 1000);
+    }
+
+    function stopTimer() {
+      clearInterval(interval);
+    }
+
+    function resetTimer() {
+      clearInterval(interval);
+      hours = 0;
+      minutes = 0;
+      seconds = 0;
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      document.getElementById("timer").innerHTML = 
+        String(hours).padStart(2, '0') + ":" + 
+        String(minutes).padStart(2, '0') + ":" + 
+        String(seconds).padStart(2, '0');
+    }
+  </script>
+</body>
+
+  
+
 </html>
